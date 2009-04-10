@@ -8,6 +8,8 @@ class NewsArticle < ActiveRecord::Base
   
   before_validation :set_slug
   
+  named_scope :released, :conditions => ["published = ? and release_date > ?", true, Time.now]
+  
   def category_name
     category ? category.name : nil
   end
