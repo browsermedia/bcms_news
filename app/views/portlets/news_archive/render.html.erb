@@ -1,3 +1,6 @@
+<% content_for :html_head do %>
+  <%= auto_discovery_link_tag :rss, news_articles_url, "RSS Feed for News Articles" %>
+<% end %>
 <div>
   <% @articles.group_by(&:year).sort_by(&:first).reverse.each do |year, year_articles| %>
     <!-- <%= year %> -->
