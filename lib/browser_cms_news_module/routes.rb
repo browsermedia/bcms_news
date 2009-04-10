@@ -1,5 +1,6 @@
 module Cms::Routes
   def routes_for_browser_cms_news_module
+    
     news_article '/news/articles/:year/:month/:day/:slug',
       :controller => 'cms/content',
       :action => 'show',
@@ -12,8 +13,8 @@ module Cms::Routes
       :month => /\d{2}/,
       :day => /\d{2}/
     
-    news_articles 'news/articles.rss', :controller => "news_articles", :format => "rss"
-      
+    news_articles '/news/articles.:format', :controller => "news_articles", :conditions => {:method => :get}
+    
     namespace(:cms) do |cms|
       cms.content_blocks :news_articles
     end  

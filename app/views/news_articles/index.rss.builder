@@ -2,7 +2,7 @@ xml.instruct! :xml, :version=>"1.0"
 xml.rss(:version=>"2.0") do
   xml.channel do
     xml.title("News Articles")
-    xml.link(news_articles_url)
+    xml.link(news_articles_url(:format => "rss"))
     xml.description("")
     xml.language('en-us')
       for article in @articles
