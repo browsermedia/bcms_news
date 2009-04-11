@@ -12,7 +12,7 @@
             <span class="release-date"><b><%= article.release_date.to_s(:long) %></b></span><br/>
           <% end %>
 
-          <%= link_to "<b>#{h(article.name)}</b>", news_article_path(article.details_params) %><br/>
+          <%= link_to "<b>#{h(article.name)}</b>", news_article_path(article.route_params) %><br/>
           <% unless article.summary.blank? -%>
             <p><%=h article.summary %></p>
           <% end %>

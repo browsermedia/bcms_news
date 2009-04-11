@@ -8,7 +8,24 @@ class NewsArticle < ActiveRecord::Base
   
   before_validation :set_slug
   
-  named_scope :released, :conditions => ["published = ? and release_date > ?", true, Time.now]
+  named_scope :released, :conditions => 
+    ["news_articles.published = ? and news_articles.release_date > ?", true, Time.now]
+
+  named_scope :released_on, lambda {|date|
+    d = if date.kind_of?(Hash)
+      Date.new(date[:year].to_i, date[:month].to_i, date[:day].to_i)
+    else
+      date
+    end
+    
+    {:conditions => [
+      "news_articles.release_date >= ? AND news_articles.release_date < ?", 
+      d.beginning_of_day, 
+      (d.beginning_of_day + 1.day)
+    ]}
+  }
+      
+  named_scope :with_slug, lambda{|slug| {:conditions => ["news_articles.slug = ?",slug]}}
   
   def category_name
     category ? category.name : nil
@@ -18,15 +35,11 @@ class NewsArticle < ActiveRecord::Base
     self.slug = name.to_slug unless name.blank?
   end
   
-  def self.prepare_params_for_details!(params)
-    release_date_string = "#{params[:month]}/#{params[:day]}/#{params[:year]}"
-    release_date = Date.parse(release_date_string)
-    news_article = NewsArticle.first(:conditions => ["release_date = ? and slug = ?", release_date, params[:slug]])
-    params[:news_article_id] = news_article.id if news_article
-  end
-  
-  def details_params
-    {:year => release_date.strftime("%Y"), :month => release_date.strftime("%m"), :day => release_date.strftime("%d"), :slug => slug}
+  def route_params
+    {:year => release_date.strftime("%Y"), 
+      :month => release_date.strftime("%m"), 
+      :day => release_date.strftime("%d"), 
+      :slug => slug}
   end
   
   def year
@@ -47,19 +60,6 @@ class NewsArticle < ActiveRecord::Base
     if new_record? && !attachment_file.blank?
       attachment.file_path = "/news/articles/attachment/#{Time.now.to_s(:year_month_day)}/#{name.to_slug}.#{attachment_file.original_filename.split('.').last.to_s.downcase}" 
     end
-  end
-
-  def renderer(news_article)
-    lambda do
-      buf = ""
-      buf += "<p><b>Name:</b> #{news_article.name}</p>"
-      buf += "<p><b>Release Date:</b> #{news_article.release_date}</p>"
-      buf += "<p><b>Category:</b> #{news_article.category_name}</p>"
-      buf += "<p><b>Attachment:</b> <a href=\"#{news_article.attachment_link}\">#{news_article.attachment_file_path}</a></p>"
-      buf += "<p><b>Summary:</b> #{news_article.summary}</p>"
-      buf += "<p><b>Body:</b> #{news_article.body}</p>"
-    end
-
   end
 
 end

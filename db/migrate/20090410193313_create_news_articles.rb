@@ -3,7 +3,7 @@ class CreateNewsArticles < ActiveRecord::Migration
     create_versioned_table :news_articles do |t|
       t.string :name 
       t.string :slug
-      t.date :release_date 
+      t.datetime :release_date 
       t.belongs_to :category 
       t.belongs_to :attachment
       t.integer :attachment_version 
@@ -58,6 +58,16 @@ class CreateNewsArticles < ActiveRecord::Migration
       :connect_to_container => "main",
       :publish_on_save => true)
 
+    # Create Page Route to article page
+    route = article.page_routes.build(
+      :name => "News Article",
+      :pattern => "/news/articles/:year/:month/:day/:slug",
+      :code => "@news_article = NewsArticle.released_on(params).with_slug(params[:slug]).first")
+    route.add_condition(:method, "get")
+    route.add_requirement(:year, '\d{4,}')
+    route.add_requirement(:month, '\d{2,}')
+    route.add_requirement(:day, '\d{2,}')
+    route.save!
   end
 
   def self.down
