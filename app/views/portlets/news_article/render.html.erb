@@ -1,5 +1,5 @@
 <% if @news_article -%>
-  <% @page_title = @news_article.name %>
+  <% page_title @news_article.name %>
   <h2><%=h @news_article.name %></h2>
   <p><%= @news_article.body %></p>
 <% else -%>
