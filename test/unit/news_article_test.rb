@@ -20,4 +20,5 @@ class NewsArticleTest < ActiveSupport::TestCase
     }, b.route_params)
   end
   
+  
 end
