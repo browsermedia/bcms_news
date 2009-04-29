@@ -9,7 +9,7 @@ class NewsArticle < ActiveRecord::Base
   before_validation :set_slug
   
   named_scope :released, :conditions => 
-    ["news_articles.published = ? and news_articles.release_date > ?", true, Time.now]
+    ["news_articles.published = ? and news_articles.release_date <= ?", true, Time.now]
 
   named_scope :released_on, lambda {|date|
     d = if date.kind_of?(Hash)

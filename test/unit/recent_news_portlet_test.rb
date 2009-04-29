@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), '/../test_helper')
 
 
 
-class NewsArticleTest < ActiveSupport::TestCase
+class RecentNewsArticleTest < ActiveSupport::TestCase
 
 
   # Note: There is probably a more elegant way to correctly set the
