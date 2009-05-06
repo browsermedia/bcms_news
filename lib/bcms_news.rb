@@ -1,0 +1,1 @@
+require 'bcms_news/routes'

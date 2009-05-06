@@ -1,5 +1,5 @@
 module Cms::Routes
-  def routes_for_browser_cms_news_module
+  def routes_for_bcms_news
     
     news_articles '/news/articles.rss', 
       :controller => "news_articles", 
