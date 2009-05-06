@@ -9,3 +9,4 @@ config/database.yml
 .dotest
 tmp/restart.txt
 public/cache
+.idea/
