@@ -23,40 +23,34 @@ class CreateNewsArticles < ActiveRecord::Migration
     overview = Page.create!(:name => "Overview", 
       :path => "/news/articles", 
       :section => news, 
-      :template_file_name => "default.html.erb", 
-      :publish_on_save => true)
+      :template_file_name => "default.html.erb")
     RecentNewsPortlet.create!(:name => "Recent News Portlet", 
       :limit => 5, 
       :more_link => "/news/archive", 
       :template => RecentNewsPortlet.default_template,
       :connect_to_page_id => overview.id,
-      :connect_to_container => "main",
-      :publish_on_save => true)
+      :connect_to_container => "main")
 
 
     # Create the page to display the news archives
     archives = Page.create!(:name => "Archive", 
       :path => "/news/archive", 
       :section => news, 
-      :template_file_name => "default.html.erb",
-      :publish_on_save => true)
+      :template_file_name => "default.html.erb")
     NewsArchivePortlet.create!(:name => "News Archive Portlet", 
       :template => NewsArchivePortlet.default_template,
       :connect_to_page_id => archives.id,
-      :connect_to_container => "main",
-      :publish_on_save => true)
+      :connect_to_container => "main")
 
     # Create the page to display a given news article
     article = Page.create!(:name => "Article", 
       :path => "/news/article", 
       :section => news, 
-      :template_file_name => "default.html.erb",
-      :publish_on_save => true)
+      :template_file_name => "default.html.erb")
     NewsArticlePortlet.create!(:name => "News Article Portlet", 
       :template => NewsArticlePortlet.default_template,
       :connect_to_page_id => article.id,
-      :connect_to_container => "main",
-      :publish_on_save => true)
+      :connect_to_container => "main")
 
     # Create Page Route to article page
     route = article.page_routes.build(
