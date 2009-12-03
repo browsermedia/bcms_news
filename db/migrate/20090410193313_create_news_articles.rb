@@ -17,7 +17,7 @@ class CreateNewsArticles < ActiveRecord::Migration
     news = Section.create!(:name => "News", 
       :path => "/news", 
       :parent => Section.root.first, 
-      :group_ids => Group.all(&:id))      
+      :group_ids => Group.all.map(&:id))      
 
     # Create the page to display the recent news
     overview = Page.create!(:name => "Overview", 
