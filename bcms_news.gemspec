@@ -9,12 +9,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["BrowserMedia"]
-  s.date = %q{2010-01-11}
+  s.date = %q{2010-09-18}
   s.description = %q{The News Module for BrowserCMS}
   s.email = %q{github@browsermedia.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-     "README"
+     "README.markdown"
   ]
   s.files = [
     "app/controllers/cms/news_articles_controller.rb",
@@ -44,11 +44,11 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{The News Module for BrowserCMS}
   s.test_files = [
-    "test/performance/browsing_test.rb",
-     "test/unit/news_article_test.rb",
+    "test/functional/news_articles_controller_test.rb",
      "test/unit/recent_news_portlet_test.rb",
+     "test/unit/news_article_test.rb",
      "test/test_helper.rb",
-     "test/functional/news_articles_controller_test.rb"
+     "test/performance/browsing_test.rb"
   ]
 
   if s.respond_to? :specification_version then
