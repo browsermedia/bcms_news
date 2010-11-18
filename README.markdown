@@ -13,6 +13,17 @@ A module to create and display News Items or Press Releases content.
 * *Configurable Views* - Each portlet's view can be edited via the CMS UI to be tweaked for any site design.
 * *News Section* - A top level 'News' section will be created along with several pages designed to handle the above features will be created.
 
+## News Articles
+The News Module defines a new content type, "News Article" which comes with the following fields.
+
+* Name (Textfield)
+* Release Date (Date Picker)
+* Category (Select one)
+* Summary (Textarea) - Appears in summarized lists (like 'Recent News')
+* Body (HTML Editor) - Appears when individual news articles are viewed.
+* File (File Upload) - Allows files attachments like PDF attachments to be added
+* Tags (Free Form Tagging) - Allows multiple free form tags to be applied to any article.
+
 ## Installation
 
 The news module uses the standard BrowserCMS module instructions as detailed here: http://guides.browsercms.org/installing_modules.html
