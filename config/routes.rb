@@ -1,4 +1,4 @@
-ActionController::Routing::Routes.draw do |map|
-  map.routes_for_bcms_news
-  map.routes_for_browser_cms
+BcmsNews::Application.routes.draw do
+  routes_for_bcms_news
+  routes_for_browser_cms
 end

@@ -8,10 +8,10 @@ class NewsArticle < ActiveRecord::Base
   
   before_validation :set_slug
   
-  named_scope :released, :conditions => 
+  scope :released, :conditions => 
     ["news_articles.published = ? and news_articles.release_date <= ?", true, Time.now]
 
-  named_scope :released_on, lambda {|date|
+  scope :released_on, lambda {|date|
     d = if date.kind_of?(Hash)
       Date.new(date[:year].to_i, date[:month].to_i, date[:day].to_i)
     else
@@ -25,7 +25,7 @@ class NewsArticle < ActiveRecord::Base
     ]}
   }
       
-  named_scope :with_slug, lambda{|slug| {:conditions => ["news_articles.slug = ?",slug]}}
+  scope :with_slug, lambda{|slug| {:conditions => ["news_articles.slug = ?",slug]}}
   
   def category_name
     category ? category.name : nil

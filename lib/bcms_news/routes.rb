@@ -1,13 +1,11 @@
-module Cms::Routes
-  def routes_for_bcms_news
+module Cms
+  module Routes
+    def routes_for_bcms_news
     
-    news_articles '/news/articles.rss', 
-      :controller => "news_articles", 
-      :conditions => {:method => :get},
-      :format => "rss"
-    
-    namespace(:cms) do |cms|
-      cms.content_blocks :news_articles
-    end  
+      match '/news/articles.rss', :to=>"news_articles#index", :as=>'news_articles', :method=>:get, :defaults => { :format => 'rss' }
+      namespace(:cms) do 
+        content_blocks :news_articles
+      end  
+    end
   end
 end
