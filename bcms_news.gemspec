@@ -35,7 +35,9 @@ Gem::Specification.new do |s|
     "db/migrate/20090410193313_create_news_articles.rb",
     "lib/bcms_news.rb",
     "lib/bcms_news/engine.rb",
-    "lib/bcms_news/routes.rb"
+    "lib/bcms_news/routes.rb",
+    "lib/generators/bcms_news/install/USAGE",
+    "lib/generators/bcms_news/install/install_generator.rb"
   ]
   s.homepage = %q{http://browsercms.org}
   s.require_paths = ["lib"]

@@ -1,0 +1,10 @@
+Description:
+    Installs the bcms_news module. 
+
+Example:
+    rails generate bcms_news:install
+
+    This will:
+		Copy the migrations from the gem into the project.
+		Add the routes to the config/routes.rb
+        

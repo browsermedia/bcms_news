@@ -17,9 +17,10 @@ begin
     gemspec.files += Dir["app/views/portlets/**/*"]
     gemspec.files += Dir["db/migrate/*.rb"]
     gemspec.files -= Dir["db/migrate/*_browsercms_*.rb"]
+    gemspec.files += Dir["lib/**/*"]
     gemspec.files -= Dir["lib/tasks/build_gem.rake"] # Remove this from packaging in gem
-    gemspec.files += Dir["lib/bcms_news.rb"]
-    gemspec.files += Dir["lib/bcms_news/*"]
+    
+    
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
