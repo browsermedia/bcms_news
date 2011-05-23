@@ -1,3 +1,3 @@
 <%= f.cms_text_field :name %>
 <%= f.cms_drop_down :category_id, categories_for('News Article').map{|c| [c.path, c.id]}, { :selected=>f.object.category_id.to_i, :include_blank=>"Show News Articles in any Category", :instructions=>"Select a category to show News Articles from only that category." } %>
-<%= f.cms_text_area :template, :default_value => @block.class.default_template %>
+<%= f.cms_template_editor :template %>

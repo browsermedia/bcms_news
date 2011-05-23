@@ -1,5 +1,5 @@
 <% content_for :html_head do %>
-  <%= auto_discovery_link_tag :rss, news_articles_url, "RSS Feed for News Articles" %>
+  <%= auto_discovery_link_tag( :rss, news_articles_url, {:title => "RSS Feed for News Articles" }) %>
 <% end %>
 <b>Latest News</b>
 <br/>
