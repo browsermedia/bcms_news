@@ -32,3 +32,10 @@ The news module uses the standard BrowserCMS module instructions as detailed her
 
 The news module will create several pages under a 'News' section in the root of the Sitemap. Contributors will need to publish these pages via the sitemap in order for them to display in the menus.
 
+### Auto Discovery Link
+
+You need to include the following link within the head portion of your templates for RSS feeds to be automatically discovered:
+
+<code>
+  <%= auto_discovery_link_tag( :rss, news_articles_url, {:title => "RSS Feed for News Articles"}) %>
+</code>
