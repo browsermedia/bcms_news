@@ -1,3 +1,4 @@
-require 'bcms_news/routes'
-require 'bcms_news/engine'
+require "bcms_news/engine"
 
+module BcmsNews
+end

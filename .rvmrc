@@ -1,1 +1,1 @@
-rvm --create 1.9.2@rails3.0
+rvm use 1.9.3@rails3.1

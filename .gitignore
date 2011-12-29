@@ -1,11 +1,12 @@
 coverage/**/*
 .DS_Store
-log/*.log
 tmp/**/*
 db/*.sqlite3
-db/schema.rb
 *.gem
 .dotest
 tmp/restart.txt
 public/cache
 .idea/
+test/dummy/tmp/*
+test/dummy/log/*
+test/dummy/db/schema.rb
