@@ -30,6 +30,12 @@ The News Module defines a new content type, "News Article" which comes with the 
 
 The news module uses the standard BrowserCMS module instructions as detailed here: http://guides.browsercms.org/installing_modules.html
 
+Note: If you have already run `rake db:seed` on your local database, you should run the following task to add the News specific seed data.
+
+```
+$ rake db:seed:bcms_news
+```
+
 ### 2. Configure RSS Feeds
 
 To have autodiscovery links to the News RSS feed, add the following to your project page templates in the <head> element.

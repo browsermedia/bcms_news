@@ -24,8 +24,7 @@ Gem::Specification.new do |s|
                     'script/**/*',
                     'app/controllers/application_controller.rb',
                     'app/helpers/application_helper.rb',
-                    'app/layouts/templates/**/*',
-                    'lib/tasks/*']
+                    'app/layouts/templates/**/*']
   s.homepage = %q{https://github.com/browsermedia/bcms_news}
   s.require_paths = ["lib"]
   s.rubyforge_project = s.name

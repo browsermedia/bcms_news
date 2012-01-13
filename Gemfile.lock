@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bcms_news (1.2.3)
+    bcms_news (1.2.4)
       browsercms (~> 3.3.0)
 
 GEM
