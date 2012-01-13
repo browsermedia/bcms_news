@@ -31,8 +31,6 @@ Gem::Specification.new do |s|
   s.rubyforge_project = s.name
   s.summary = %q{The News Module for BrowserCMS}
   s.test_files = Dir["test/**/*"]
-  
   s.add_dependency(%q<browsercms>, ["~> 3.3.0"])
- 
 end
 

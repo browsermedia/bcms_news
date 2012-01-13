@@ -1,2 +1,5 @@
 <h2><%=h @content_block.name %></h2>
 <p><%= @content_block.body.html_safe %></p>
+<% if @content_block.attachment %>
+<%= link_to "Attachment", @content_block.attachment_file_path %>
+<% end %>

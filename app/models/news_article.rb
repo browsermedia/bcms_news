@@ -51,13 +51,13 @@ class NewsArticle < ActiveRecord::Base
   end
   
   def set_attachment_section
-    if new_record? && !attachment_file.blank?
+    if !attachment_file.blank?
       attachment.section = Section.first(:conditions => {:name => 'News'})
     end
   end
   
   def set_attachment_file_path
-    if new_record? && !attachment_file.blank?
+    if !attachment_file.blank?
       attachment.file_path = "/news/articles/attachment/#{Time.now.to_s(:year_month_day)}/#{name.to_slug}.#{attachment_file.original_filename.split('.').last.to_s.downcase}" 
     end
   end
