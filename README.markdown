@@ -38,7 +38,7 @@ $ rake db:seed:bcms_news
 
 ### 2. Configure RSS Feeds
 
-To have autodiscovery links to the News RSS feed, add the following to your project page templates in the <head> element.
+To have autodiscovery links to the News RSS feed, add the following to your page templates in the `head` element.
 
 ```
 <%= auto_discovery_link_tag( :rss, news_articles_url, {:title => "RSS Feed for News Articles"}) %>
