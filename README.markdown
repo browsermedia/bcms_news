@@ -26,9 +26,20 @@ The News Module defines a new content type, "News Article" which comes with the 
 
 ## Installation
 
+### 1. Install Module
+
 The news module uses the standard BrowserCMS module instructions as detailed here: http://guides.browsercms.org/installing_modules.html
 
-### After Installation
+### 2. Configure RSS Feeds
 
-The news module will create several pages under a 'News' section in the root of the Sitemap. Contributors will need to publish these pages via the sitemap in order for them to display in the menus.
+To have autodiscovery links to the News RSS feed, add the following to your project page templates in the <head> element.
 
+```
+<%= auto_discovery_link_tag( :rss, news_articles_url, {:title => "RSS Feed for News Articles"}) %>
+```
+
+### 3. Publish Pages
+
+The news module will create several pages under a 'News' section in the root of the Sitemap. You will need to publish these pages via the sitemap in order for them to display in the menus.
+
+You will also likely want to mark the 'Article' page as hidden from menus.
