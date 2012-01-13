@@ -1,54 +1,38 @@
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require "bcms_news/version"
+
 Gem::Specification.new do |s|
   s.name = %q{bcms_news}
-  s.version = "1.2.2"
+  s.version = BcmsNews::VERSION
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["BrowserMedia"]
-  s.date = %q{2011-05-23}
   s.description = %q{The News Module for BrowserCMS}
   s.email = %q{github@browsermedia.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.markdown"
   ]
-  s.files = [
-    "app/controllers/cms/news_articles_controller.rb",
-    "app/controllers/news_articles_controller.rb",
-    "app/models/news_article.rb",
-    "app/portlets/news_archive_portlet.rb",
-    "app/portlets/news_article_portlet.rb",
-    "app/portlets/recent_news_portlet.rb",
-    "app/views/cms/news_articles/_form.html.erb",
-    "app/views/cms/news_articles/render.html.erb",
-    "app/views/news_articles/index.rss.builder",
-    "app/views/portlets/news_archive/_form.html.erb",
-    "app/views/portlets/news_archive/render.html.erb",
-    "app/views/portlets/news_article/_form.html.erb",
-    "app/views/portlets/news_article/render.html.erb",
-    "app/views/portlets/recent_news/_form.html.erb",
-    "app/views/portlets/recent_news/render.html.erb",
-    "db/migrate/20090410193313_create_news_articles.rb",
-    "lib/bcms_news.rb",
-    "lib/bcms_news/engine.rb",
-    "lib/bcms_news/routes.rb",
-    "lib/generators/bcms_news/install/USAGE",
-    "lib/generators/bcms_news/install/install_generator.rb"
-  ]
-  s.homepage = %q{http://browsercms.org}
+  s.files += Dir["app/**/*"]
+  s.files += Dir["db/migrate/[0-9]*_create_news_articles.rb"]
+  s.files += Dir["db/bcms_news.seeds.rb"]
+  s.files += Dir["lib/**/*"] 
+  s.files += Dir["Gemfile", "LICENSE.txt", "COPYRIGHT.txt", "GPL.txt" ]
+  s.files -= Dir['config/**/*', 
+                    'public/**/*', 
+                    'config.ru', 
+                    'script/**/*',
+                    'app/controllers/application_controller.rb',
+                    'app/helpers/application_helper.rb',
+                    'app/layouts/templates/**/*',
+                    'lib/tasks/*']
+  s.homepage = %q{https://github.com/browsermedia/bcms_news}
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{browsercms}
-  s.rubygems_version = %q{1.7.2}
+  s.rubyforge_project = s.name
   s.summary = %q{The News Module for BrowserCMS}
-  s.test_files = [
-    "test/integration/news_articles_test.rb",
-    "test/performance/browsing_test.rb",
-    "test/test_helper.rb",
-    "test/unit/news_article_test.rb",
-    "test/unit/recent_news_portlet_test.rb"
-  ]
-
-
-  s.add_dependency(%q<browsercms>, [">= 3.3.0"])
+  s.test_files = Dir["test/**/*"]
+  
+  s.add_dependency(%q<browsercms>, ["~> 3.3.0"])
  
 end
 

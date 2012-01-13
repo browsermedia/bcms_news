@@ -9,9 +9,9 @@
             <span class="release-date"><b><%= article.release_date.to_s(:long) %></b></span><br/>
           <% end %>
 
-          <%= link_to "<b>#{h(article.name)}</b>", news_article_path(article.route_params) %><br/>
+          <b><%= link_to article.name, news_article_path(article.route_params) %></b><br/>
           <% unless article.summary.blank? -%>
-            <p><%=h article.summary %></p>
+            <p><%= article.summary %></p>
           <% end %>
         </div>
       <% end %>

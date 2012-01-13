@@ -1,7 +1,7 @@
 <% if @news_article -%>
   <% page_title @news_article.name %>
   <h2><%=h @news_article.name %></h2>
-  <p><%= @news_article.body %></p>
+  <p><%= @news_article.body.html_safe %></p>
 <% else -%>
   <b>Missing required parameter</b><br/>
   This portlet expects a request parameter 'news_article_id'. Be sure the calling page provides it.
