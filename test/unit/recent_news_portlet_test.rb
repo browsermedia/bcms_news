@@ -28,8 +28,9 @@ module BcmsNews
 
     def test_looks_up_articles_based_on_category_id
       c_type = Cms::CategoryType.create!(:name => "News")
-      c = Cms::Category.create!(:name => "Category A", :category_type => c_type)    
-      @article_in_category = Factory(:article, :category => c)
+      assert_equal true, c_type.persisted?
+      c = Cms::Category.create!(:name => "Category A", :category_type_id => c_type.id)    
+      @article_in_category = Factory(:article, :category_id => c.id)
 
       p = RecentNewsPortlet.new
       

@@ -1,5 +1,7 @@
 class BcmsNews::NewsArticle < ActiveRecord::Base
-  acts_as_content_block :belongs_to_attachment => true, :taggable => true
+  acts_as_content_block :taggable => true
+  
+  has_attachment :file
   
   belongs_to :category, :class_name=>"Cms::Category"
 

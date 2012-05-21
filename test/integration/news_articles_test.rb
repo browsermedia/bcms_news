@@ -15,7 +15,8 @@ class NewsArticlesTest < ActionController::IntegrationTest
     get "/bcms_news/articles/feed"
     
     assert_response :success, "What the heck is a 406 response code?"
-    assert_select "rss"
+    assert @response.body.include?("<rss")
+    # Checking vs @response.body rather than using assert_select since the later throws invalid warnings when parsing XML
   end
 end
 
