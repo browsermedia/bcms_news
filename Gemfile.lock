@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    bcms_news (1.3.0)
-      browsercms (>= 3.5.0.rc1, < 3.6.0)
+    bcms_news (1.4.0)
+      browsercms (>= 3.5.0.rc2, < 3.6.0)
 
 GEM
   remote: http://rubygems.org/
@@ -37,7 +37,7 @@ GEM
     ancestry (1.2.5)
       activerecord (>= 2.2.2)
     arel (3.0.2)
-    browsercms (3.5.0.rc1)
+    browsercms (3.5.0.rc2)
       ancestry (~> 1.2.4)
       ckeditor_rails (~> 3.6.2.2)
       jquery-rails (~> 2.0)

@@ -29,5 +29,5 @@ Gem::Specification.new do |s|
   s.rubyforge_project = s.name
 
 
-  s.add_dependency("browsercms", "< 3.6.0", ">= 3.5.0.rc1")
+  s.add_dependency("browsercms", "< 3.6.0", ">= 3.5.0.rc2")
 end
