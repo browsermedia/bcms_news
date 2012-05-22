@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'browsercms'
 gemspec
 
 # Avoids unnecessary Content Length warnings that Rack 1.3.6/Rails 3.1.3 + Webrick throw
