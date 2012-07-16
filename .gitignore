@@ -1,7 +1,6 @@
 coverage/**/*
 .DS_Store
 tmp/**/*
-db/*.sqlite3
 *.gem
 .dotest
 tmp/restart.txt
@@ -10,3 +9,4 @@ test/dummy/.sass-cache
 test/dummy/tmp/*
 test/dummy/log/*
 test/dummy/db/schema.rb
+test/dummy/db/*.sqlite3

@@ -6,7 +6,6 @@ Gem::Specification.new do |s|
   s.name        = "bcms_news"
   s.version     = BcmsNews::VERSION
 
-  s.files = Dir["{app,config,db,lib}/**/*"]
   s.authors = ["BrowserMedia"]
   s.date = %q{2011-12-29}
   s.description = %q{The News Module for BrowserCMS}
@@ -15,10 +14,8 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = [
     "README.markdown"
   ]
-  s.files += Dir["app/**/*"]
-  s.files += Dir["config/**/*"]
-  s.files += Dir["db/**/*"]
-  s.files += Dir["lib/**/*"] 
+  
+  s.files = Dir["{app,config,db,lib}/**/*"]
   s.files += Dir["Gemfile", "LICENSE.txt", "COPYRIGHT.txt", "GPL.txt" ]
 
   s.test_files += Dir["test/**/*"]

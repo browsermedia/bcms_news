@@ -8,8 +8,8 @@ gemspec
 gem "thin"
 
 # Gem Environments
-group :development do
-  gem "mysql"
+group :development, :test do
+  gem "sqlite3"
   gem "mocha"
 end
 
