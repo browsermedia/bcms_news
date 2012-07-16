@@ -4,7 +4,7 @@ module BcmsNews
   class RecentNewsArticleTest < ActiveSupport::TestCase
 
     def setup
-      @past_article_1 = Factory(:article)
+      @past_article_1 = Factory(:article, :release_date => Date.yesterday)
       @past_article_2 = Factory(:article)
     end
 
