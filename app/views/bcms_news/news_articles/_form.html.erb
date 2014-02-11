@@ -3,6 +3,6 @@
 <%= f.input :category_id, as: :cms_drop_down, categories_for('News Article').map{|c| [c.path, c.id]} %>
 <%= f.input :summary, as: :cms_text_area, :style => "height: 100px" %>
 <%= f.input :body, as: :text_editor %>
-<%= f.cms_file_field :file, :label => "File" %>
+<%= f.input :file, as: :file_picker %>
 <%= f.cms_tag_list %>
 
