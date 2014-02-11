@@ -1,7 +1,8 @@
-<%= f.cms_text_field :name %>
-<%= f.cms_date_picker :release_date %>
-<%= f.cms_drop_down :category_id, categories_for('News Article').map{|c| [c.path, c.id]} %>
-<%= f.cms_text_area :summary, :style => "height: 100px" %>
-<%= f.cms_text_editor :body %>
+<%= f.input :name, as: :cms_text_field %>
+<%= f.input :release_date, as: :date_picker %>
+<%= f.input :category_id, as: :cms_drop_down, categories_for('News Article').map{|c| [c.path, c.id]} %>
+<%= f.input :summary, as: :cms_text_area, :style => "height: 100px" %>
+<%= f.input :body, as: :text_editor %>
 <%= f.cms_file_field :file, :label => "File" %>
 <%= f.cms_tag_list %>
+
