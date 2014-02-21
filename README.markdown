@@ -1,3 +1,11 @@
+#This branch is specifically for Projects that were upgraded to BCMS 4.0 that previously had bcms_news.
+#This may not work on a new implementation of BCMS 4.0 that did not previously have bcms_news installed
+#Current state:  This will allow the news to function correctly in the front end of the cms, however there is an error thrown
+#when logged into the cms.  The error seems to point to browsercms / app / views / layouts / cms / _content_types.html.erb
+#Indications are it may be a namespacing issue in the main browsercms project.
+
+
+
 # News Module for BrowserCMS
 
 A module to create and display News Items or Press Releases content.
